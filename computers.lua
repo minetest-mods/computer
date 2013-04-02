@@ -69,12 +69,12 @@ computer.register("computer:slaystation2", {
 });
 
 -- Sinclair ZX Spectrum lookalike
-computer.register("computer:spectre", {
-    description = "SX Spectre";
+computer.register("computer:specter", {
+    description = "SX Specter";
     tiles_off = { };
     node_box = computer.pixelnodebox(32, {
         -- X   Y   Z   W   H   L
         {  3,  0,  0, 26,  4, 17 },   -- Keyboard
         { 18,  0, 18, 12,  6, 14 },   -- Tape Player
     });
-);
+});
