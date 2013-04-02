@@ -1,0 +1,83 @@
+
+-- Copyright (C) 2012-2013 Diego Martínez <kaeza@users.sf.net>
+-- License is WTFPL (see README.txt).
+
+local MODNAME = "computer";
+
+if (computer ~= nil) then
+    error("some other mod defined computer");
+end
+
+computer = { };
+
+--[[ computer.pixelnodebox:
+  |
+  |   Helper to create node boxes.
+  |
+  |   Parameters:
+  |     size        Resolution of the `boxes'.
+  |     boxes       The shape of the object.
+  |
+  |   Return Value:
+  |     The new nodebox, ready to be assigned to `nodedef.node_box'.
+  ]]
+computer.pixelnodebox = function ( size, boxes )
+    local fixed = { };
+    local i, box;
+    for i, box in ipairs(boxes) do
+        local x, y, z, w, h, l = unpack(box);
+        fixed[#fixed + 1] = {
+            (x / size) - 0.5,
+            (y / size) - 0.5,
+            (z / size) - 0.5,
+            ((x + w) / size) - 0.5,
+            ((y + h) / size) - 0.5,
+            ((z + l) / size) - 0.5,
+        };
+    end
+    return {
+        type = "fixed";
+        fixed = fixed;
+    };
+end
+
+--[[ computer.register:
+  |
+  |   Helper to register a new computer node.
+  |
+  |   Parameters:
+  |     name        Short ID string used as the object name.
+  |     desc        Description of the object for the inventory.
+  |     nodebox     The shape of the object. Also used as selection.
+  |
+  |   Return Value:
+  |     None.
+  ]]
+computer.register = function ( name, desc, nodebox )
+
+    local TEXPFX = MODNAME.."_"..name.."_";
+
+    minetest.register_node(MODNAME..":"..name, {
+        drawtype = "nodebox";
+        paramtype = "light";
+        paramtype2 = "facedir";
+        description = desc;
+        groups = { snappy=2, choppy=2, oddly_breakable_by_hand=2 };
+        tiles = {
+            TEXPFX.."top.png",
+            TEXPFX.."bottom.png",
+            TEXPFX.."right.png",
+            TEXPFX.."left.png",
+            TEXPFX.."back.png",
+            TEXPFX.."front.png"
+        };
+        node_box = nodebox;
+        selection_box = nodebox;
+    });
+
+end
+
+local MODPATH = minetest.get_modpath(MODNAME);
+dofile(MODPATH.."/nodes.lua");
+dofile(MODPATH.."/miscitems.lua");
+dofile(MODPATH.."/recipes.lua");
