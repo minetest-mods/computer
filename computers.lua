@@ -94,3 +94,23 @@ computer.register("computer:wee", {
 computer.register_handheld("computer:piepad", {
     description = "Snapple Piepad";
 });
+
+-- Commodore 64 lookalike
+computer.register("computer:admiral64", {
+    description = "Admiral64";
+    tiles_off = { };
+    node_box = computer.pixelnodebox(32, {
+        -- X   Y   Z   W   H   L
+        {  0,  0,  0, 32,  4, 18 },   -- Keyboard
+    });
+});
+
+-- Commodore 128 lookalike
+computer.register("computer:admiral128", {
+    description = "Admiral128";
+    tiles_off = { };
+    node_box = computer.pixelnodebox(32, {
+        -- X   Y   Z   W   H   L
+        {  0,  0,  0, 32,  4, 27 },   -- Keyboard
+    });
+});
