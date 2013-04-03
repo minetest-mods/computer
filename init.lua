@@ -62,6 +62,21 @@ computer.register = function ( name, def )
     });
 end
 
+computer.register_handheld = function ( name, def )
+    local nodename = name;
+    if (name:sub(1, 1) == ":") then name = name:sub(2); end
+    local modname, basename = name:match("^([^:]+):(.*)");
+    local TEXPFX = modname.."_"..basename.."_inv";
+    local ONSTATE = modname..":"..basename;
+    local OFFSTATE = modname..":"..basename.."_off";
+    local on_use = def.on_use;
+    minetest.register_craftitem(ONSTATE, {
+        description = def.description;
+        inventory_image = TEXPFX..".png";
+        wield_image = TEXPFX..".png";
+    });
+end
+
 computer.pixelnodebox = function ( size, boxes )
     local fixed = { };
     local i, box;

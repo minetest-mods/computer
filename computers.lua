@@ -78,3 +78,19 @@ computer.register("computer:specter", {
         { 18,  0, 18, 12,  6, 14 },   -- Tape Player
     });
 });
+
+-- Nintendo Wii lookalike.
+computer.register("computer:wee", {
+    description = "Nientiendo Wee";
+    tiles_off = { front=true; };
+    node_box = computer.pixelnodebox(32, {
+        -- X   Y   Z   W   H   L
+        { 11,  0,  3, 10,  6, 26 },   -- Base
+        { 12,  6,  4,  8, 22, 24 },   -- Top
+    });
+});
+
+-- Apple iPad lookalike.
+computer.register_handheld("computer:piepad", {
+    description = "Snapple Piepad";
+});
