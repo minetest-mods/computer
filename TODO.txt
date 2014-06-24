@@ -4,7 +4,6 @@ TO-DO List:
 - New Nodes:
 
   - Computers:
-    - Modern w/flat monitor
     - Mainframe
     - My Computer :P
 
