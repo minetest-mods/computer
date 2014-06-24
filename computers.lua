@@ -114,3 +114,239 @@ computer.register("computer:admiral128", {
         {  0,  0,  0, 32,  4, 27 },   -- Keyboard
     });
 });
+
+---------------------------------------------------------------------------------
+----------------------------added by crazyginger72-------------------------------
+---------------------------------------------------------------------------------
+
+
+
+-- Generic Flat Screen LCD (16x9) with keyboard
+  minetest.register_node("computer:monitor", {
+	description = "Monitor and keyboard",
+	tiles = {"computer_monitor_t.png","computer_monitor_bt.png","computer_monitor_l.png","computer_monitor_r.png","computer_monitor_b.png","computer_monitor_f_on.png"},
+	--inventory_image =
+	paramtype = "light",
+	light_source = 4,
+	paramtype2 = "facedir",
+	walkable = false,
+	is_ground_content = true,
+	groups = {crumbly=3,not_in_creative_inventory=1},
+	--sounds = default.node_sound_dirt_defaults(),
+	drawtype = "nodebox",
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.5, -0.3125, 0.1875, 0.5, 0.375, 0.223116}, 
+			{-0.25, -0.5, 0.125, 0.25, -0.466981, 0.5}, 
+			{-0.125, -0.5, 0.3125, 0.125, 0.0283019, 0.346698}, 
+			{-0.375, -0.3125, 0.208965, 0.375, 0.240566, 0.3125}, 
+			{-0.4375, -0.5, -0.4375, 0.4375, -0.4375, -0.125}, 
+			{-0.1875, -0.5, 0.25, 0.1875, -0.410377, 0.375},
+			},
+		},
+	selection_box = {
+		type = "fixed",
+		fixed = {
+						{-0.5, -0.3125, 0.1875, 0.5, 0.375, 0.223116}, 
+			{-0.25, -0.5, 0.125, 0.25, -0.466981, 0.5}, 
+			{-0.125, -0.5, 0.3125, 0.125, 0.0283019, 0.346698}, 
+			{-0.375, -0.3125, 0.208965, 0.375, 0.240566, 0.3125}, 
+			{-0.4375, -0.5, -0.4375, 0.4375, -0.4375, -0.125}, 
+			{-0.1875, -0.5, 0.25, 0.1875, -0.410377, 0.375},
+			},
+		},
+})
+  
+  minetest.register_node("computer:monitor_bios", {
+	description = "Monitor and keyboard",
+	tiles = {"computer_monitor_t.png","computer_monitor_bt.png","computer_monitor_l.png","computer_monitor_r.png","computer_monitor_b.png","computer_monitor_f_bios.png"},
+	--inventory_image =
+	paramtype = "light",
+	light_source = 4,
+	paramtype2 = "facedir",
+	walkable = false,
+	is_ground_content = true,
+	groups = {crumbly=3,not_in_creative_inventory=1},
+	--sounds = default.node_sound_dirt_defaults(),
+	drawtype = "nodebox",
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.5, -0.3125, 0.1875, 0.5, 0.375, 0.223116}, 
+			{-0.25, -0.5, 0.125, 0.25, -0.466981, 0.5}, 
+			{-0.125, -0.5, 0.3125, 0.125, 0.0283019, 0.346698}, 
+			{-0.375, -0.3125, 0.208965, 0.375, 0.240566, 0.3125}, 
+			{-0.4375, -0.5, -0.4375, 0.4375, -0.4375, -0.125}, 
+			{-0.1875, -0.5, 0.25, 0.1875, -0.410377, 0.375},
+			},
+		},
+	selection_box = {
+		type = "fixed",
+		fixed = {
+						{-0.5, -0.3125, 0.1875, 0.5, 0.375, 0.223116}, 
+			{-0.25, -0.5, 0.125, 0.25, -0.466981, 0.5}, 
+			{-0.125, -0.5, 0.3125, 0.125, 0.0283019, 0.346698}, 
+			{-0.375, -0.3125, 0.208965, 0.375, 0.240566, 0.3125}, 
+			{-0.4375, -0.5, -0.4375, 0.4375, -0.4375, -0.125}, 
+			{-0.1875, -0.5, 0.25, 0.1875, -0.410377, 0.375},
+			},
+		},
+})  
+  
+  minetest.register_node("computer:monitor_loading", {
+	description = "Monitor and keyboard",
+	tiles = {"computer_monitor_t.png","computer_monitor_bt.png","computer_monitor_l.png","computer_monitor_r.png","computer_monitor_b.png","computer_monitor_f_loading.png"},
+	--inventory_image =
+	paramtype = "light",
+	light_source = 4,
+	paramtype2 = "facedir",
+	walkable = false,
+	is_ground_content = true,
+	groups = {crumbly=3,not_in_creative_inventory=1},
+	--sounds = default.node_sound_dirt_defaults(),
+	drawtype = "nodebox",
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.5, -0.3125, 0.1875, 0.5, 0.375, 0.223116}, 
+			{-0.25, -0.5, 0.125, 0.25, -0.466981, 0.5}, 
+			{-0.125, -0.5, 0.3125, 0.125, 0.0283019, 0.346698}, 
+			{-0.375, -0.3125, 0.208965, 0.375, 0.240566, 0.3125}, 
+			{-0.4375, -0.5, -0.4375, 0.4375, -0.4375, -0.125}, 
+			{-0.1875, -0.5, 0.25, 0.1875, -0.410377, 0.375},
+			},
+		},
+	selection_box = {
+		type = "fixed",
+		fixed = {
+						{-0.5, -0.3125, 0.1875, 0.5, 0.375, 0.223116}, 
+			{-0.25, -0.5, 0.125, 0.25, -0.466981, 0.5}, 
+			{-0.125, -0.5, 0.3125, 0.125, 0.0283019, 0.346698}, 
+			{-0.375, -0.3125, 0.208965, 0.375, 0.240566, 0.3125}, 
+			{-0.4375, -0.5, -0.4375, 0.4375, -0.4375, -0.125}, 
+			{-0.1875, -0.5, 0.25, 0.1875, -0.410377, 0.375},
+			},
+		},
+})  
+
+  minetest.register_node("computer:monitor_login", {
+	description = "Monitor and keyboard",
+	tiles = {"computer_monitor_t.png","computer_monitor_bt.png","computer_monitor_l.png","computer_monitor_r.png","computer_monitor_b.png","computer_monitor_f_login.png"},
+	--inventory_image =
+	paramtype = "light",
+	light_source = 4,
+	paramtype2 = "facedir",
+	walkable = false,
+	is_ground_content = true,
+	groups = {crumbly=3,not_in_creative_inventory=1},
+	--sounds = default.node_sound_dirt_defaults(),
+	drawtype = "nodebox",
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.5, -0.3125, 0.1875, 0.5, 0.375, 0.223116}, 
+			{-0.25, -0.5, 0.125, 0.25, -0.466981, 0.5}, 
+			{-0.125, -0.5, 0.3125, 0.125, 0.0283019, 0.346698}, 
+			{-0.375, -0.3125, 0.208965, 0.375, 0.240566, 0.3125}, 
+			{-0.4375, -0.5, -0.4375, 0.4375, -0.4375, -0.125}, 
+			{-0.1875, -0.5, 0.25, 0.1875, -0.410377, 0.375},
+			},
+		},
+	selection_box = {
+		type = "fixed",
+		fixed = {
+						{-0.5, -0.3125, 0.1875, 0.5, 0.375, 0.223116}, 
+			{-0.25, -0.5, 0.125, 0.25, -0.466981, 0.5}, 
+			{-0.125, -0.5, 0.3125, 0.125, 0.0283019, 0.346698}, 
+			{-0.375, -0.3125, 0.208965, 0.375, 0.240566, 0.3125}, 
+			{-0.4375, -0.5, -0.4375, 0.4375, -0.4375, -0.125}, 
+			{-0.1875, -0.5, 0.25, 0.1875, -0.410377, 0.375},
+			},
+		},
+})
+
+  minetest.register_node("computer:monitor_desktop", {
+	description = "Monitor and keyboard",
+	tiles = {"computer_monitor_t.png","computer_monitor_bt.png","computer_monitor_l.png","computer_monitor_r.png","computer_monitor_b.png","computer_monitor_f_desktop.png"},
+	--inventory_image =
+	paramtype = "light",
+	light_source = 4,
+	paramtype2 = "facedir",
+	walkable = false,
+	is_ground_content = true,
+	groups = {crumbly=3,not_in_creative_inventory=1},
+	--sounds = default.node_sound_dirt_defaults(),
+	drawtype = "nodebox",
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.5, -0.3125, 0.1875, 0.5, 0.375, 0.223116}, 
+			{-0.25, -0.5, 0.125, 0.25, -0.466981, 0.5}, 
+			{-0.125, -0.5, 0.3125, 0.125, 0.0283019, 0.346698}, 
+			{-0.375, -0.3125, 0.208965, 0.375, 0.240566, 0.3125}, 
+			{-0.4375, -0.5, -0.4375, 0.4375, -0.4375, -0.125}, 
+			{-0.1875, -0.5, 0.25, 0.1875, -0.410377, 0.375},
+			},
+		},
+	selection_box = {
+		type = "fixed",
+		fixed = {
+						{-0.5, -0.3125, 0.1875, 0.5, 0.375, 0.223116}, 
+			{-0.25, -0.5, 0.125, 0.25, -0.466981, 0.5}, 
+			{-0.125, -0.5, 0.3125, 0.125, 0.0283019, 0.346698}, 
+			{-0.375, -0.3125, 0.208965, 0.375, 0.240566, 0.3125}, 
+			{-0.4375, -0.5, -0.4375, 0.4375, -0.4375, -0.125}, 
+			{-0.1875, -0.5, 0.25, 0.1875, -0.410377, 0.375},
+			},
+		},
+})
+
+  minetest.register_node("computer:monitor_off", {
+	description = "Monitor and keyboard",
+	tiles = {"computer_monitor_t_off.png","computer_monitor_bt.png","computer_monitor_l.png","computer_monitor_r.png","computer_monitor_b.png","computer_monitor_f_off.png"},
+	--inventory_image =
+	paramtype = "light",
+	light_source = 4,
+	paramtype2 = "facedir",
+	walkable = false,
+	is_ground_content = true,
+	groups = {crumbly=3},
+	--sounds = default.node_sound_dirt_defaults(),
+	drawtype = "nodebox",
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.5, -0.3125, 0.1875, 0.5, 0.375, 0.223116}, 
+			{-0.25, -0.5, 0.125, 0.25, -0.466981, 0.5}, 
+			{-0.125, -0.5, 0.3125, 0.125, 0.0283019, 0.346698}, 
+			{-0.375, -0.3125, 0.208965, 0.375, 0.240566, 0.3125}, 
+			{-0.4375, -0.5, -0.4375, 0.4375, -0.4375, -0.125}, 
+			{-0.1875, -0.5, 0.25, 0.1875, -0.410377, 0.375},
+			},
+		},
+	selection_box = {
+		type = "fixed",
+		fixed = {
+						{-0.5, -0.3125, 0.1875, 0.5, 0.375, 0.223116}, 
+			{-0.25, -0.5, 0.125, 0.25, -0.466981, 0.5}, 
+			{-0.125, -0.5, 0.3125, 0.125, 0.0283019, 0.346698}, 
+			{-0.375, -0.3125, 0.208965, 0.375, 0.240566, 0.3125}, 
+			{-0.4375, -0.5, -0.4375, 0.4375, -0.4375, -0.125}, 
+			{-0.1875, -0.5, 0.25, 0.1875, -0.410377, 0.375},
+			},
+		},
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
