@@ -1,4 +1,4 @@
-
+﻿
 Decorative Computers Mod for Minetest
 by Diego Martínez <kaeza@users.sf.net>
 
@@ -17,6 +17,9 @@ For now just use creative mode or the `/give' or `/giveme' chat commands
 
 These are the items currently defined by this mod:
 
+computer:tower (modern type)
+computer:monitor (LCD with keyboard)
+computer:router (wifi type)
 computer:babytower
 computer:shefriendSOO
 computer:slaystation
