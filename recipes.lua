@@ -69,3 +69,59 @@ minetest.register_craft({
         { "default:steel_ingot", "default:steel_ingot", "default:steel_ingot", },
     };
 });
+
+--new stuff
+
+minetest.register_craft({
+    output = "computer:monitor";
+    recipe = {
+        { "homedecor:plastic_sheeting", "default:glass","", },
+        { "homedecor:plastic_sheeting", "default:glass","", },
+        { "homedecor:plastic_sheeting", "default:mese_crystal_fragment", "homedecor:plastic_sheeting", },
+    };
+});
+
+minetest.register_craft({
+    output = "computer:router";
+    recipe = {
+        { "default:steel_ingot","","", },
+        { "default:steel_ingot" ,"homedecor:plastic_sheeting", "homedecor:plastic_sheeting", },
+        { "default:mese_crystal_fragment","homedecor:plastic_sheeting", "homedecor:plastic_sheeting",  },
+    };
+});
+
+minetest.register_craft({
+    output = "computer:tower";
+    recipe = {
+        { "homedecor:plastic_sheeting", "default:steel_ingot", "homedecor:plastic_sheeting", },
+        { "homedecor:plastic_sheeting", "default:mese_crystal", "homedecor:plastic_sheeting", },
+        { "homedecor:plastic_sheeting", "default:steel_ingot", "homedecor:plastic_sheeting", },
+    };
+});
+
+minetest.register_craft({
+    output = "computer:printer";
+    recipe = {
+        { "homedecor:plastic_sheeting", "default:steel_ingot","", },
+        { "homedecor:plastic_sheeting", "default:mese_crystal", "homedecor:plastic_sheeting", },
+        { "homedecor:plastic_sheeting", "default:coal_lump", "homedecor:plastic_sheeting", },
+    };
+});
+
+minetest.register_craft({
+    output = "computer:printer";
+    recipe = {
+        { "homedecor:plastic_sheeting", "default:steel_ingot","", },
+        { "homedecor:plastic_sheeting", "default:mese_crystal", "homedecor:plastic_sheeting", },
+        { "homedecor:plastic_sheeting", "dye:black", "homedecor:plastic_sheeting", },
+    };
+});
+
+minetest.register_craft({
+    output = "computer:server";
+    recipe = {
+        { "computer:tower", "computer:tower", "computer:tower", },
+        { "computer:tower", "computer:tower", "computer:tower", },
+        { "computer:tower", "computer:tower", "computer:tower", },
+    };
+});
