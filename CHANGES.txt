@@ -1,5 +1,10 @@
 
-Version 0.1.5:
+version 0.2.1:
+  - Added modern tower pc
+  - Added wifi router
+  - Added flatscreen LCD and keyboard
+
+Version 0.2.0:
   - Added recipes.
   - Partly re-written.
   - Removed original baby tower (seemed out of place).
