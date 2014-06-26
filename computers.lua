@@ -397,7 +397,7 @@ computer.register("computer:admiral128", {
 	--inventory_image =
 	paramtype = "light",
 	paramtype2 = "facedir",
-	walkable = false,
+	walkable = true,
 	is_ground_content = true,
 	groups = {crumbly=3,not_in_creative_inventory=1},
 	--sounds = default.node_sound_dirt_defaults(),
@@ -431,7 +431,7 @@ computer.register("computer:admiral128", {
 	--inventory_image =
 	paramtype = "light",
 	paramtype2 = "facedir",
-	walkable = false,
+	walkable = true,
 	is_ground_content = true,
 	groups = {crumbly=3},
 	--sounds = default.node_sound_dirt_defaults(),
@@ -457,12 +457,131 @@ computer.register("computer:admiral128", {
 		end
 })
 
+-- Printer/scaner combo
 
+minetest.register_node("computer:printer", {
+	description = "Printer Scaner Combo",
+	tiles = {"computer_printer_t.png","computer_printer_bt.png","computer_printer_l.png","computer_printer_r.png","computer_printer_b.png","computer_printer_f.png"},
+	--inventory_image =
+	paramtype = "light",
+	paramtype2 = "facedir",
+	walkable = true,
+	is_ground_content = true,
+	groups = {crumbly=3},
+	--sounds = default.node_sound_dirt_defaults(),
+	drawtype = "nodebox",
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.4375, -0.3125, -0.125, 0.4375, -0.0625, 0.375}, -- NodeBox1
+			{-0.4375, -0.5, -0.125, 0.4375, -0.4375, 0.375}, -- NodeBox2
+			{-0.4375, -0.5, -0.125, -0.25, -0.0625, 0.375}, -- NodeBox3
+			{0.25, -0.5, -0.125, 0.4375, -0.0625, 0.375}, -- NodeBox4
+			{-0.4375, -0.5, -0.0625, 0.4375, -0.0625, 0.375}, -- NodeBox5
+			{-0.375, -0.4375, 0.25, 0.375, -0.0625, 0.4375}, -- NodeBox6
+			{-0.25, -0.25, 0.4375, 0.25, 0.0625, 0.5}, -- NodeBox7
+			{-0.25, -0.481132, -0.3125, 0.25, -0.4375, 0}, -- NodeBox8	
+			},
+		},
+	selection_box = {
+		type = "fixed",
+		fixed = {
+			{-0.4375, -0.3125, -0.125, 0.4375, -0.0625, 0.375}, -- NodeBox1
+			{-0.4375, -0.5, -0.125, 0.4375, -0.4375, 0.375}, -- NodeBox2
+			{-0.4375, -0.5, -0.125, -0.25, -0.0625, 0.375}, -- NodeBox3
+			{0.25, -0.5, -0.125, 0.4375, -0.0625, 0.375}, -- NodeBox4
+			{-0.4375, -0.5, -0.0625, 0.4375, -0.0625, 0.375}, -- NodeBox5
+			{-0.375, -0.4375, 0.25, 0.375, -0.0625, 0.4375}, -- NodeBox6
+			{-0.25, -0.25, 0.4375, 0.25, 0.0625, 0.5}, -- NodeBox7
+			{-0.25, -0.481132, -0.3125, 0.25, -0.4375, 0}, -- NodeBox8
+			},
+		},
+})
 
+--Rack Server
 
+minetest.register_node("computer:server", {
+    drawtype = "nodebox",
+    description = "Rack Server",
+    tiles = {
+        'computer_server_t.png',
+        'computer_server_bt.png',
+        'computer_server_l.png',
+        'computer_server_r.png',
+        'computer_server_bt.png',	
+        'computer_server_f_on.png'
+    },
+    --inventory_image = "computer_server_inv.png",
+    sunlight_propagates = false,
+    paramtype = "light",
+    paramtype2 = "facedir",
+    walkable = true,
+    groups = { snappy = 3 },
 
+        selection_box = {
+                type = "fixed",
+                fixed = {-0.5, -0.5, -0.25, 0.5, 1.125, 0.4375}, 
+        },
+        node_box = {
+                type = "fixed",
+                fixed = {-0.5, -0.5, -0.25, 0.5, 1.125, 0.4375}, 
+        },
+	drop = 'computer:server',
+    sounds = default.node_sound_wood_defaults(),
+    on_rightclick = function ( pos, node, clicker, itemstack)
+	node.name = "computer:server";
+            minetest.env:set_node(pos, node);
+            nodeupdate(pos)
+		end,
+    on_place = function(itemstack, placer, pointed_thing)
+        local pos = pointed_thing.above
+        if minetest.get_node({x=pos.x, y=pos.y+1, z=pos.z}).name ~= "air" then
+            minetest.chat_send_player( placer:get_player_name(), "Not enough vertical space to place a server!" )
+            return
+        end
+        return minetest.item_place(itemstack, placer, pointed_thing)
+    end,
+    
+    	
 
+})
 
+minetest.register_node("computer:server_on", {
+    drawtype = "nodebox",
+    description = "Rack Server",
+    tiles = {
+        'computer_server_t.png',
+        'computer_server_bt.png',
+        'computer_server_r.png',
+        'computer_server_l.png',
+        'computer_server_bt.png',	
+        'computer_server_f_on.png',
+    },
+    -- 
 
+    inventory_image = "computer_server_inv.png",
+    sunlight_propagates = false,
+    paramtype = "light",
+    paramtype2 = "facedir",
+    walkable = true,
+    groups = { snappy = 3,not_in_creative_inventory=1 },
 
+        selection_box = {
+                type = "fixed",
+                fixed = {-0.5, -0.5, -0.25, 0.5, 1.125, 0.4375}, 
+        },
+        node_box = {
+                type = "fixed",
+                fixed = {-0.5, -0.5, -0.25, 0.5, 1.125, 0.4375}, 
+        },
+
+    sounds = default.node_sound_wood_defaults(),
+	drop = 'computer:server',
+	on_rightclick = function ( pos, node, clicker, itemstack)
+	node.name = "computer:server";
+            minetest.env:set_node(pos, node);
+            nodeupdate(pos)
+		end	,
+   	
+})
 
