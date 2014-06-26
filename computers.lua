@@ -124,7 +124,9 @@ computer.register("computer:admiral128", {
 -- Generic Flat Screen LCD (16x9) with keyboard
   minetest.register_node("computer:monitor", {
 	description = "Monitor and keyboard",
-	tiles = {"computer_monitor_t.png","computer_monitor_bt.png","computer_monitor_l.png","computer_monitor_r.png","computer_monitor_b.png","computer_monitor_f_on.png"},
+	tiles = {"computer_monitor_t.png","computer_monitor_bt.png",
+           "computer_monitor_l.png","computer_monitor_r.png",
+           "computer_monitor_b.png","computer_monitor_f_desktop"},              --"computer_monitor_f_on.png"},  --till i get a boot abm inplace  
 	--inventory_image =
 	paramtype = "light",
 	light_source = 4,
@@ -393,7 +395,7 @@ computer.register("computer:admiral128", {
 
   minetest.register_node("computer:tower_on", {
 	description = "Computer Tower",
-	tiles = {"computer_tower_t.png","computer_tower_bt.png","computer_tower_l.png","computer_tower_r.png","computer_tower_b.png","computer_tower_f_on.png"},
+	tiles = {"computer_tower_t.png","computer_tower_bt.png","computer_tower_l.png","computer_tower_r.png","computer_tower_b.png","computer_tower_f_on.png"},  
 	--inventory_image =
 	paramtype = "light",
 	paramtype2 = "facedir",
