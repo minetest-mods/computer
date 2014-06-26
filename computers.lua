@@ -122,11 +122,11 @@ computer.register("computer:admiral128", {
 
 
 -- Generic Flat Screen LCD (16x9) with keyboard
-  minetest.register_node("computer:monitor", {
+  minetest.register_node("computer:monitor_on", {
 	description = "Monitor and keyboard",
 	tiles = {"computer_monitor_t.png","computer_monitor_bt.png",
            "computer_monitor_l.png","computer_monitor_r.png",
-           "computer_monitor_b.png","computer_monitor_f_desktop"},              --"computer_monitor_f_on.png"},  --till i get a boot abm inplace  
+           "computer_monitor_b.png","computer_monitor_f_desktop.png"},              --"computer_monitor_f_on.png"},  --till i get a boot abm inplace  
 	--inventory_image =
 	paramtype = "light",
 	light_source = 4,
@@ -158,10 +158,10 @@ computer.register("computer:admiral128", {
 			{-0.1875, -0.5, 0.25, 0.1875, -0.410377, 0.375},
 			},
 		},
-	drop = 'computer:monitor_off'	,
+	drop = 'computer:monitor'	,
 	on_rightclick = function ( pos, node, clicker, itemstack) 
-	node.name = "computer:monitor_off";
-            minetest.env:set_node(pos, node);
+	node.name = "computer:monitor";
+            minetest.set_node(pos, node);
             nodeupdate(pos)
 	end
 })
@@ -200,7 +200,7 @@ computer.register("computer:admiral128", {
 			{-0.1875, -0.5, 0.25, 0.1875, -0.410377, 0.375},
 			},
 		},
-	drop = 'computer:monitor_off'	,
+	drop = 'computer:monitor'	,
 })  
   
   minetest.register_node("computer:monitor_loading", {
@@ -237,7 +237,7 @@ computer.register("computer:admiral128", {
 			{-0.1875, -0.5, 0.25, 0.1875, -0.410377, 0.375},
 			},
 		},
-	drop = 'computer:monitor_off'	,
+	drop = 'computer:monitor'	,
 })  
 
   minetest.register_node("computer:monitor_login", {
@@ -274,7 +274,7 @@ computer.register("computer:admiral128", {
 			{-0.1875, -0.5, 0.25, 0.1875, -0.410377, 0.375},
 			},
 		},
-	drop = 'computer:monitor_off'	,
+	drop = 'computer:monitor'	,
 })
 
   minetest.register_node("computer:monitor_desktop", {
@@ -311,10 +311,10 @@ computer.register("computer:admiral128", {
 			{-0.1875, -0.5, 0.25, 0.1875, -0.410377, 0.375},
 			},
 		},
-	drop = 'computer:monitor_off'	,
+	drop = 'computer:monitor'	,
 })
 
-  minetest.register_node("computer:monitor_off", {
+  minetest.register_node("computer:monitor", {
 	description = "Monitor and keyboard",
 	tiles = {"computer_monitor_t_off.png","computer_monitor_bt.png","computer_monitor_l.png","computer_monitor_r.png","computer_monitor_b.png","computer_monitor_f_off.png"},
 	--inventory_image =
@@ -348,11 +348,11 @@ computer.register("computer:admiral128", {
 			{-0.1875, -0.5, 0.25, 0.1875, -0.410377, 0.375},
 			},
 		},
-	drop = 'computer:monitor_off'	,
+	drop = 'computer:monitor'	,
 	
 	on_rightclick = function ( pos, node, clicker, itemstack)
-    node.name = "computer:monitor";
-            minetest.env:set_node(pos, node);
+    node.name = "computer:monitor_on";
+            minetest.set_node(pos, node);
             nodeupdate(pos)
 	end
 
@@ -422,7 +422,7 @@ computer.register("computer:admiral128", {
 	
 	on_rightclick = function ( pos, node, clicker, itemstack)
 	node.name = "computer:tower";
-            minetest.env:set_node(pos, node);
+            minetest.set_node(pos, node);
             nodeupdate(pos)
 		end
 })
@@ -454,7 +454,7 @@ computer.register("computer:admiral128", {
 		},
 	on_rightclick = function ( pos, node, clicker, itemstack)
 	node.name = "computer:tower_on";
-            minetest.env:set_node(pos, node);
+            minetest.set_node(pos, node);
             nodeupdate(pos)
 		end
 })
@@ -480,7 +480,7 @@ minetest.register_node("computer:printer", {
 			{-0.4375, -0.5, -0.125, -0.25, -0.0625, 0.375}, 
 			{0.25, -0.5, -0.125, 0.4375, -0.0625, 0.375}, 
 			{-0.4375, -0.5, -0.0625, 0.4375, -0.0625, 0.375}, 
-			{-0.375, -0.4375, 0.25, 0.375, -0.0625, 0.4375}, -
+			{-0.375, -0.4375, 0.25, 0.375, -0.0625, 0.4375}, 
 			{-0.25, -0.25, 0.4375, 0.25, 0.0625, 0.5}, 
 			{-0.25, -0.481132, -0.3125, 0.25, -0.4375, 0}, 
 			},
@@ -511,7 +511,7 @@ minetest.register_node("computer:server", {
         'computer_server_l.png',
         'computer_server_r.png',
         'computer_server_bt.png',	
-        'computer_server_f_on.png'
+        'computer_server_f_off.png'
     },
     --inventory_image = "computer_server_inv.png",
     sunlight_propagates = false,
@@ -528,11 +528,11 @@ minetest.register_node("computer:server", {
                 type = "fixed",
                 fixed = {-0.5, -0.5, -0.25, 0.5, 1.125, 0.4375}, 
         },
-	drop = 'computer:server',
+	--drop = 'computer:server',
     sounds = default.node_sound_wood_defaults(),
     on_rightclick = function ( pos, node, clicker, itemstack)
-	node.name = "computer:server";
-            minetest.env:set_node(pos, node);
+	node.name = "computer:server_on";
+            minetest.set_node(pos, node);
             nodeupdate(pos)
 		end,
     on_place = function(itemstack, placer, pointed_thing)
@@ -581,7 +581,7 @@ minetest.register_node("computer:server_on", {
 	drop = 'computer:server',
 	on_rightclick = function ( pos, node, clicker, itemstack)
 	node.name = "computer:server";
-            minetest.env:set_node(pos, node);
+            minetest.set_node(pos, node);
             nodeupdate(pos)
 		end	,
    	
