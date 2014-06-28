@@ -17,6 +17,8 @@ For now just use creative mode or the `/give' or `/giveme' chat commands
 
 These are the items currently defined by this mod:
 
+computer:printer (printer scanner combo)
+computer:server (rack server)
 computer:tower (modern type)
 computer:monitor (LCD with keyboard)
 computer:router (wifi type)

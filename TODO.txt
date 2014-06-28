@@ -4,12 +4,11 @@ TO-DO List:
 - New Nodes:
 
   - Computers:
-    - Mainframe
+    - Mainframe (well me have a rackserver now)
     - My Computer :P
 
   - Peripherals:
-    - Printer
-    - Scanner
+    - Scanner ( well we have a printer/scanner combo now)
 
   - Consoles:
     - NES

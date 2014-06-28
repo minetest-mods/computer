@@ -1,3 +1,10 @@
+version 0.2.3:
+  - Added animated router front
+  - Added all crafts for new items
+
+version 0.2.2:
+  - Added printer
+  - Added server
 
 version 0.2.1:
   - Added modern tower pc
