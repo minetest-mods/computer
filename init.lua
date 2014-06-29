@@ -41,12 +41,12 @@ computer.register = function ( name, def )
         groups = { snappy=2, choppy=2, oddly_breakable_by_hand=2,
             not_in_creative_inventory=1 };
         tiles = {
-            (TEXPFX.."tp"..(def.tiles_off.top    and "_off" or "")..".png"),
+            (TEXPFX.."tp"..(def.tiles_off.top and "_off" or "")..".png"),
             (TEXPFX.."bt"..(def.tiles_off.bottom and "_off" or "")..".png"),
-            (TEXPFX.."rt"..(def.tiles_off.right  and "_off" or "")..".png"),
-            (TEXPFX.."lt"..(def.tiles_off.left   and "_off" or "")..".png"),
-            (TEXPFX.."bk"..(def.tiles_off.back   and "_off" or "")..".png"),
-            (TEXPFX.."ft"..(def.tiles_off.front  and "_off" or "")..".png"),
+            (TEXPFX.."rt"..(def.tiles_off.right and "_off" or "")..".png"),
+            (TEXPFX.."lt"..(def.tiles_off.left and "_off" or "")..".png"),
+            (TEXPFX.."bk"..(def.tiles_off.back and "_off" or "")..".png"),
+            (TEXPFX.."ft"..(def.tiles_off.front and "_off" or "")..".png"),
         };
         node_box = def.node_box_off or def.node_box;
         selection_box = def.node_box_off or def.node_box;
