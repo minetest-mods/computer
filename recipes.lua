@@ -29,7 +29,7 @@ minetest.register_craft({
 });
 
 minetest.register_craft({
-    output = "computer:spectre";
+    output = "computer:specter";
     recipe = {
         { "", "", "homedecor:plastic_sheeting", },
         { "homedecor:plastic_sheeting", "homedecor:plastic_sheeting", "homedecor:plastic_sheeting", },
