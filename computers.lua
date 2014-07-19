@@ -513,7 +513,7 @@ minetest.register_node("computer:server", {
         'computer_server_bt.png',	
         'computer_server_f_off.png'
     },
-    --inventory_image = "computer_server_inv.png",
+    inventory_image = "computer_server_inv.png",
     sunlight_propagates = false,
     paramtype = "light",
     paramtype2 = "facedir",
@@ -559,8 +559,6 @@ minetest.register_node("computer:server_on", {
         'computer_server_bt.png',	
         'computer_server_f_on.png',
     },
-    -- 
-
     inventory_image = "computer_server_inv.png",
     sunlight_propagates = false,
     paramtype = "light",
