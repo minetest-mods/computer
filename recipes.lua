@@ -3,15 +3,6 @@
 -- License is WTFPL (see README.txt).
 
 minetest.register_craft({
-    output = "computer:babytower";
-    recipe = {
-        { "homedecor:plastic_sheeting", "homedecor:plastic_sheeting", "homedecor:plastic_sheeting", },
-        { "homedecor:plastic_sheeting", "default:glass", "homedecor:plastic_sheeting", },
-        { "homedecor:plastic_sheeting", "homedecor:plastic_sheeting", "homedecor:plastic_sheeting", },
-    };
-});
-
-minetest.register_craft({
     output = "computer:shefriendSOO";
     recipe = {
         { "homedecor:plastic_sheeting", "homedecor:plastic_sheeting", "homedecor:plastic_sheeting", },
@@ -38,7 +29,7 @@ minetest.register_craft({
 });
 
 minetest.register_craft({
-    output = "computer:spectre";
+    output = "computer:specter";
     recipe = {
         { "", "", "homedecor:plastic_sheeting", },
         { "homedecor:plastic_sheeting", "homedecor:plastic_sheeting", "homedecor:plastic_sheeting", },
