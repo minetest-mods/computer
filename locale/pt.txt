@@ -1,0 +1,5 @@
+# Language: Português do Brasil
+# Author: Caio Roberto <caiorrs@gmail.com>
+
+Plastic sheet = Placa de Plástico
+Unprocessed Plastic base = Base de Plástico Não Processada
