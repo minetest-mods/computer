@@ -34,7 +34,7 @@ if (not minetest.get_modpath("homedecor")) then
            "default:junglegrass"
         }
     })
-    
+
     minetest.register_craft({
         type = "shapeless",
         output = 'homedecor:plastic_base 3',
@@ -43,7 +43,7 @@ if (not minetest.get_modpath("homedecor")) then
            "default:dry_shrub"
         },
     })
-    
+
     minetest.register_craft({
         type = "shapeless",
         output = 'homedecor:plastic_base 4',
@@ -55,19 +55,19 @@ if (not minetest.get_modpath("homedecor")) then
            "default:leaves"
         }
     })
-    
+
     minetest.register_craft({
         type = "cooking",
         output = "homedecor:plastic_sheeting",
         recipe = "homedecor:plastic_base",
     })
-    
+
     minetest.register_craft({
         type = 'fuel',
         recipe = 'homedecor:plastic_base',
         burntime = 30,
     })
-    
+
     minetest.register_craft({
         type = 'fuel',
         recipe = 'homedecor:plastic_sheeting',

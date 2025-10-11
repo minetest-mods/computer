@@ -2,13 +2,11 @@
 computer = { };
 
 computer.register = function ( name, def )
-    local nodename = name;
     if (name:sub(1, 1) == ":") then name = name:sub(2); end
-    local modname, basename = name:match("^([^:]+):(.*)");
-    local TEXPFX = modname.."_"..basename.."_";
-    local ONSTATE = modname..":"..basename;
-    local OFFSTATE = modname..":"..basename.."_off";
-    local def = def;
+    local modname, basename = name:match("^([^:]+):(.*)")
+    local TEXPFX = modname.."_"..basename.."_"
+    local ONSTATE = modname..":"..basename
+    local OFFSTATE = modname..":"..basename.."_off"
     minetest.register_node(ONSTATE, {
         drawtype = "nodebox";
         paramtype = "light";
@@ -63,13 +61,11 @@ computer.register = function ( name, def )
 end
 
 computer.register_handheld = function ( name, def )
-    local nodename = name;
     if (name:sub(1, 1) == ":") then name = name:sub(2); end
-    local modname, basename = name:match("^([^:]+):(.*)");
-    local TEXPFX = modname.."_"..basename.."_inv";
-    local ONSTATE = modname..":"..basename;
-    local OFFSTATE = modname..":"..basename.."_off";
-    local on_use = def.on_use;
+    local modname, basename = name:match("^([^:]+):(.*)")
+    local TEXPFX = modname.."_"..basename.."_inv"
+    local ONSTATE = modname..":"..basename
+    -- no OFFSTATE
     minetest.register_craftitem(ONSTATE, {
         description = def.description;
         inventory_image = TEXPFX..".png";
@@ -78,10 +74,9 @@ computer.register_handheld = function ( name, def )
 end
 
 computer.pixelnodebox = function ( size, boxes )
-    local fixed = { };
-    local i, box;
+    local fixed = { }
     for i, box in ipairs(boxes) do
-        local x, y, z, w, h, l = unpack(box);
+        local x, y, z, w, h, l = unpack(box)
         fixed[#fixed + 1] = {
             (x / size) - 0.5,
             (y / size) - 0.5,
@@ -89,7 +84,7 @@ computer.pixelnodebox = function ( size, boxes )
             ((x + w) / size) - 0.5,
             ((y + h) / size) - 0.5,
             ((z + l) / size) - 0.5,
-        };
+        }
     end
     return {
         type = "fixed";
